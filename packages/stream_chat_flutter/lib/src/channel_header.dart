@@ -144,8 +144,6 @@ class ChannelHeader extends StatelessWidget implements PreferredSizeWidget {
             systemOverlayStyle: theme.brightness == Brightness.dark
                 ? SystemUiOverlayStyle.light
                 : SystemUiOverlayStyle.dark,
-            elevation: 1,
-            leading: leadingWidget,
             backgroundColor: backgroundColor ?? channelHeaderTheme.color,
             actions: actions ??
                 <Widget>[

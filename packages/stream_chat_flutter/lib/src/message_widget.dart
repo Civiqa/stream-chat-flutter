@@ -612,7 +612,7 @@ class _MessageWidgetState extends State<MessageWidget>
           ? _streamChatTheme.colorTheme.highlight
           : null,
       child: Portal(
-        child: InkWell(
+        child: GestureDetector(
           onTap: () {
             widget.onMessageTap!(widget.message);
           },

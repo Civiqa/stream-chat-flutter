@@ -655,7 +655,7 @@ class MessageInputState extends State<MessageInput> {
                       channel.config?.commands.isNotEmpty == true)
                     _buildCommandButton(context),
                   ...widget.actions,
-                ].insertBetween(const SizedBox(width: 8)),
+                ].insertBetween(const SizedBox(width: 12)),
               ),
         duration: const Duration(milliseconds: 300),
         alignment: Alignment.center,
