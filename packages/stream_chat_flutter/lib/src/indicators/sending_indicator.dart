@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
-/// {@template streamSendingIndicator}
-/// Shows the sending status of a message.
-/// {@endtemplate}
-class StreamSendingIndicator extends StatelessWidget {
-  /// {@macro streamSendingIndicator}
-  const StreamSendingIndicator({
-    super.key,
+/// Used to show the sending status of the message
+class SendingIndicator extends StatelessWidget {
+  /// Constructor for creating a [SendingIndicator] widget
+  const SendingIndicator({
+    Key? key,
     required this.message,
     this.isMessageRead = false,
     this.size = 12,
-  });
+  }) : super(key: key);
 
   /// Message for sending indicator
   final Message message;
@@ -33,7 +31,7 @@ class StreamSendingIndicator extends StatelessWidget {
     if (message.status == MessageSendingStatus.sent) {
       return StreamSvgIcon.check(
         size: size,
-        color: StreamChatTheme.of(context).colorTheme.textLowEmphasis,
+        color: IconTheme.of(context).color!.withOpacity(0.5),
       );
     }
     if (message.status == MessageSendingStatus.sending ||
