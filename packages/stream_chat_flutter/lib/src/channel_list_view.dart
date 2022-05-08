@@ -299,6 +299,7 @@ class _ChannelListViewState extends State<ChannelListView> {
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8),
@@ -310,23 +311,24 @@ class _ChannelListViewState extends State<ChannelListView> {
                       Padding(
                         padding: const EdgeInsets.all(8),
                         child: Text(
-                          context.translations.letsStartChattingLabel,
+                          "Explore your Civiqas to get involed!",
                           style: chatThemeData.textTheme.headline,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8,
-                          horizontal: 52,
-                        ),
-                        child: Text(
-                          context.translations.sendingFirstMessageLabel,
                           textAlign: TextAlign.center,
-                          style: chatThemeData.textTheme.body.copyWith(
-                            color: chatThemeData.colorTheme.textLowEmphasis,
-                          ),
                         ),
                       ),
+                      // Padding(
+                      //   padding: const EdgeInsets.symmetric(
+                      //     vertical: 8,
+                      //     horizontal: 52,
+                      //   ),
+                      //   child: Text(
+                      //     "context.translations.sendingFirstMessageLabel",
+                      //     textAlign: TextAlign.center,
+                      //     style: chatThemeData.textTheme.body.copyWith(
+                      //       color: chatThemeData.colorTheme.textLowEmphasis,
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
@@ -704,14 +706,10 @@ class _ChannelListViewState extends State<ChannelListView> {
         },
       );
 
-  Widget _separatorBuilder(context, i) {
-    final effect = StreamChatTheme.of(context).colorTheme.borderBottom;
-
-    return Container(
-      height: 1,
-      color: effect.color!.withOpacity(effect.alpha ?? 1.0),
-    );
-  }
+  Widget _separatorBuilder(context, i) => Divider(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        thickness: 6,
+      );
 }
 
 /// Class for slidable action
