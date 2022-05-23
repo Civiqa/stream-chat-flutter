@@ -879,7 +879,7 @@ class _MessageListViewState extends State<MessageListView> {
                       initialIndex = 0;
                       await streamChannel!.reloadChannel();
 
-                      WidgetsBinding.instance?.addPostFrameCallback((_) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
                         _scrollController!.jumpTo(index: 0);
                       });
                     } else {

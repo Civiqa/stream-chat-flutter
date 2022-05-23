@@ -129,7 +129,7 @@ class StreamChatCoreState extends State<StreamChatCore>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     _subscribeToConnectivityChange(widget.connectivityStream);
   }
 
@@ -221,7 +221,7 @@ class StreamChatCoreState extends State<StreamChatCore>
 
   @override
   void dispose() {
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _unsubscribeFromConnectivityChange();
     _eventSubscription?.cancel();
     _disconnectTimer?.cancel();
