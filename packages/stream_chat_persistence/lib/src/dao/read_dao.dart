@@ -25,7 +25,7 @@ class ReadDao extends DatabaseAccessor<DriftChatDatabase> with _$ReadDaoMixin {
         final userEntity = row.readTable(users);
         final readEntity = row.readTable(reads);
         return readEntity.toRead(user: userEntity.toUser());
-      }).get();
+      }).getString();
 
   /// Updates the read data of a particular channel with
   /// the new [readList] data

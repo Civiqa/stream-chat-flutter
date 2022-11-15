@@ -87,7 +87,7 @@ class PinnedMessageDao extends DatabaseAccessor<DriftChatDatabase>
             ..where(pinnedMessages.parentId.isNotNull())
             ..orderBy([OrderingTerm.asc(pinnedMessages.createdAt)]))
           .map(_messageFromJoinRow)
-          .get());
+          .getString());
 
   /// Returns all the messages of a particular thread by matching
   /// [PinnedMessages.parentId] with [parentId]
@@ -106,7 +106,7 @@ class PinnedMessageDao extends DatabaseAccessor<DriftChatDatabase>
           ..where(pinnedMessages.parentId.equals(parentId))
           ..orderBy([OrderingTerm.asc(pinnedMessages.createdAt)]))
         .map(_messageFromJoinRow)
-        .get());
+        .getString());
 
     if (msgList.isNotEmpty) {
       if (options?.lessThan != null) {
@@ -150,7 +150,7 @@ class PinnedMessageDao extends DatabaseAccessor<DriftChatDatabase>
               pinnedMessages.showInChannel.equals(true))
           ..orderBy([OrderingTerm.asc(pinnedMessages.createdAt)]))
         .map(_messageFromJoinRow)
-        .get());
+        .getString());
 
     if (msgList.isNotEmpty) {
       if (messagePagination?.lessThan != null) {

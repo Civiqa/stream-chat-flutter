@@ -26,7 +26,7 @@ class PinnedMessageReactionDao extends DatabaseAccessor<DriftChatDatabase>
         final userEntity = rows.readTableOrNull(users);
         final reactionEntity = rows.readTable(pinnedMessageReactions);
         return reactionEntity.toReaction(user: userEntity?.toUser());
-      }).get();
+      }).getString();
 
   /// Returns all the reactions of a particular message
   /// added by a particular user by matching

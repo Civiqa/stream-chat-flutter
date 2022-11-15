@@ -85,7 +85,7 @@ class MessageDao extends DatabaseAccessor<DriftChatDatabase>
             ..where(messages.parentId.isNotNull())
             ..orderBy([OrderingTerm.asc(messages.createdAt)]))
           .map(_messageFromJoinRow)
-          .get());
+          .getString());
 
   /// Returns all the messages of a particular thread by matching
   /// [Messages.parentId] with [parentId]
@@ -104,7 +104,7 @@ class MessageDao extends DatabaseAccessor<DriftChatDatabase>
           ..where(messages.parentId.equals(parentId))
           ..orderBy([OrderingTerm.asc(messages.createdAt)]))
         .map(_messageFromJoinRow)
-        .get());
+        .getString());
 
     if (msgList.isNotEmpty) {
       if (options?.lessThan != null) {
@@ -150,7 +150,7 @@ class MessageDao extends DatabaseAccessor<DriftChatDatabase>
           )
           ..orderBy([OrderingTerm.asc(messages.createdAt)]))
         .map(_messageFromJoinRow)
-        .get());
+        .getString());
 
     if (msgList.isNotEmpty) {
       if (messagePagination?.lessThan != null) {

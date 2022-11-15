@@ -24,5 +24,5 @@ class UserDao extends DatabaseAccessor<DriftChatDatabase> with _$UserDaoMixin {
   Future<List<User>> getUsers() =>
       (select(users)..orderBy([(u) => OrderingTerm.desc(u.createdAt)]))
           .map((it) => it.toUser())
-          .get();
+          .getString();
 }

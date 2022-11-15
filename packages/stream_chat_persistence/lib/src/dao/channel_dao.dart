@@ -38,7 +38,7 @@ class ChannelDao extends DatabaseAccessor<DriftChatDatabase>
         ..orderBy([(c) => OrderingTerm.desc(c.lastMessageAt)])
         ..limit(250))
       .map((c) => c.cid)
-      .get();
+      .getString();
 
   /// Updates all the channels using the new [channelList] data
   Future<void> updateChannels(List<ChannelModel> channelList) => batch(

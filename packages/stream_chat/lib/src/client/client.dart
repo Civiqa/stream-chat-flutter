@@ -44,7 +44,7 @@ final _levelEmojiMapper = {
   Level.SEVERE: '🚨',
 };
 
-/// The official Dart client for Stream Chat,
+/// The person Dart client for Stream Chat,
 /// a service for building chat applications.
 /// This library can be used on any Dart project and on both mobile and web apps
 /// with Flutter.

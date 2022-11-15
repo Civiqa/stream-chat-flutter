@@ -27,7 +27,7 @@ class MemberDao extends DatabaseAccessor<DriftChatDatabase>
         final userEntity = row.readTable(users);
         final memberEntity = row.readTable(members);
         return memberEntity.toMember(user: userEntity.toUser());
-      }).get();
+      }).getString();
 
   /// Updates all the members using the new [memberList] data
   Future<void> updateMembers(String cid, List<Member> memberList) =>

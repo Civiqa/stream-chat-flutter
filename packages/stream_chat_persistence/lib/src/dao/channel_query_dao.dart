@@ -60,7 +60,7 @@ class ChannelQueryDao extends DatabaseAccessor<DriftChatDatabase>
     final hash = _computeHash(filter);
     return (select(channelQueries)..where((c) => c.queryHash.equals(hash)))
         .map((c) => c.channelCid)
-        .get();
+        .getString();
   }
 
   /// Get list of channels by filter, sort and paginationParams
@@ -87,7 +87,7 @@ class ChannelQueryDao extends DatabaseAccessor<DriftChatDatabase>
       final createdByEntity = row.readTableOrNull(users);
       final channelEntity = row.readTable(channels);
       return channelEntity.toChannelModel(createdBy: createdByEntity?.toUser());
-    })).get();
+    })).getString();
 
     var chainedComparator = (ChannelModel a, ChannelModel b) {
       final dateA = a.lastMessageAt ?? a.createdAt;
